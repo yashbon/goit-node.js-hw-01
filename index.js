@@ -1,6 +1,7 @@
 const contacts = require("./contacts");
-const { Command } = require("commander");
-const program = new Command();
+const { program } = require("commander");
+// const { Command } = require("commander");
+// const program = new Command();
 
 program
     .option("-a, --action <type>", "choose action")
