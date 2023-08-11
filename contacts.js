@@ -1,13 +1,7 @@
-// contacts.js
 const fs = require("fs/promises");
 const path = require("path");
 const crypto = require("node:crypto");
-// const crypto = require("crypto");
-// const { nanoid } = require("nanoid");
 
-/*
- * Розкоментуй і запиши значення
- */
 const contactsPath = path.join(__dirname, "db/contacts.json");
 
 // TODO: задокументувати кожну функцію
@@ -58,7 +52,7 @@ async function removeContact(contactId) {
 async function addContact(name, email, phone) {
     // Повертає об'єкт доданого контакту.
     const contacts = await read();
-    const newContact = { name, email, phone, id: crypto.randomUUID() };
+    const newContact = { id: crypto.randomUUID(), name, email, phone };
     contacts.push(newContact);
     await write(contacts);
 
