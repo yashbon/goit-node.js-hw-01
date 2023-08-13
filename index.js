@@ -20,7 +20,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         case "list":
             const contactsList = await contacts
                 .listContacts()
-                .then(console.log)
+                .then(console.table)
                 .catch(console.error);
             return contactsList;
 
